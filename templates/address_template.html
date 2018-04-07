@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN”
+“http://www.w3.org/TR/html4/loose.dtd”>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Addresss Details</title>
+    <meta name="Display details of a blockchain addres" content="Testing blockchain API">
+</head>
+
+<body>
+    <p>
+        <h1>Details for address {{ address }}</h1>
+    </p>
+    {% for item in details %}
+        <li>{{ escape(item.value) }}</li>
+        <li>{{ escape(item.address) }}</li>
+    {% end %}
+
+</body>
+
+</html>
