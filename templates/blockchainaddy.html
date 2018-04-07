@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN”
+“http://www.w3.org/TR/html4/loose.dtd”>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blockchain address query</title>
+    <meta name="Form for querying blockchain address" content="esting blockchain API">
+</head>
+
+<body>
+    <p>
+        <h1>Submit a Blockchain address for query</h1>
+    </p>
+    <form action="/blockchain_addy" method="post">
+        {% raw form.address %} 
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
