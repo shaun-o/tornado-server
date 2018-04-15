@@ -52,12 +52,12 @@ application = tornado.web.Application([
 ])
 
 # implementation for SSL
-http_server = tornado.httpserver.HTTPServer(application, ssl_options={
-    "certfile": os.path.join("/home/shaun/.ssh", "dev.shaun-dev.com.crt"),
-    "keyfile": os.path.join("/home/shaun/.ssh", "dev.shaun-dev.com.key"),
-})
+# http_server = tornado.httpserver.HTTPServer(application, ssl_options={
+#     "certfile": os.path.join(os.environ['HOME'], ".ssh", "dev.shaun-dev.com.crt"),
+#     "keyfile": os.path.join(os.environ['HOME'], ".ssh", "dev.shaun-dev.com.key"),
+# })
 
 if __name__ == "__main__":
-    # application.listen(8888)
-    http_server.listen(8443)
+    application.listen(int(os.environ['PORT']))
+    #http_server.listen(int(os.environ['PORT']))
     tornado.ioloop.IOLoop.instance().start()
