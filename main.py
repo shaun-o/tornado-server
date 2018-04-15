@@ -13,7 +13,6 @@ import wtforms
 from wtforms_tornado import Form
 import blockchain_api
 from blockchain_api import TransactionDetails
-
 class BlockchainAddy(Form):
     address = wtforms.TextField(
         'Address', validators=[wtforms.validators.DataRequired()], default=u'')
