@@ -13,6 +13,8 @@ import wtforms
 from wtforms_tornado import Form
 import blockchain_api
 from blockchain_api import TransactionDetails
+
+
 class BlockchainAddy(Form):
     address = wtforms.TextField(
         'Address', validators=[wtforms.validators.DataRequired()], default=u'')
@@ -35,10 +37,12 @@ class BlockchainQuery(tornado.web.RequestHandler):
             template = loader.load("address_template.html")
             input_details = blockchain_api.read_blockchain_address(details)
 
-            self.write(template.generate(address=details, details = input_details))
+            self.write(template.generate(
+                address=details, details=input_details))
         else:
             self.set_status(400)
             self.write(form.errors)
+
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -58,5 +62,5 @@ application = tornado.web.Application([
 
 if __name__ == "__main__":
     application.listen(int(os.environ['PORT']))
-    #http_server.listen(int(os.environ['PORT']))
+    # http_server.listen(int(os.environ['PORT']))
     tornado.ioloop.IOLoop.instance().start()
