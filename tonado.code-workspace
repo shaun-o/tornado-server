@@ -6,6 +6,5 @@
 	],
 	"settings": {
 		"python.pythonPath": "/Users/shaunoates/anaconda/envs/tornado/bin/python",
-		"python.envFile": "${workspaceFolder}/test.env"
 	}
 }
